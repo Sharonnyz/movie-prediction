@@ -10,10 +10,10 @@ def revenue_and_budget():
     print(df_budget.info())
     x = df_budget['originalBudget']
     y = df_budget['revenue']
-    z1 = np.polyfit(x, y, 1) # 用1次多项式拟合
+    z1 = np.polyfit(x, y, 1) # linear
     p1 = np.poly1d(z1)
-    # print(p1) # 在屏幕上打印拟合多项式
-    yvals=p1(x) # 也可以使用yvals=np.polyval(z1,x)
+    # print(p1) 
+    yvals=p1(x) # also yvals=np.polyval(z1,x)
     plot1=plt.plot(x, y, '.',label='original values')
     plot2=plt.plot(x, yvals, 'r',label='polyfit values')
     plt.xlabel('budget')
@@ -105,8 +105,8 @@ def heat():
     df = pd.read_csv('D:/Gra1/computing/archive/new_m.csv')
     x = df[['originalBudget','vote_average','vote_count','popularity','runtime','release_year','release_month','release_dayofweek','revenue']]
     x_coor = x.corr()
-    # plt.subplots(figsize=(9, 9), dpi=1080, facecolor='w')  # 设置画布大小，分辨率，和底色
-    sns.heatmap(x_coor, annot=True, square=True, cmap="Blues",fmt='.2g')  # annot为热力图上显示数据；fmt='.2g'为数据保留两位有效数字,square呈现正方形，vmax最大值为1
+    # plt.subplots(figsize=(9, 9), dpi=1080, facecolor='w')  
+    sns.heatmap(x_coor, annot=True, square=True, cmap="Blues",fmt='.2g')  
     plt.savefig('D:/Gra1/computing/data/df_cor.png', bbox_inches='tight')
     plt.show()
     plt.close()
