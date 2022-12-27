@@ -12,6 +12,6 @@ The original data set contained information collected from The Movie Database ab
 
 ## Scripts
 
-- Perform data cleansing and data exploration
-- Perform exploratory data analysis
-- Implement models, including linear regression, catboost, LightGBM and XGBoost
+- ``:Perform data cleansing and data exploration
+- `EDA_plot.py`: Perform exploratory data analysis
+- ``:Implement models, including linear regression, catboost, LightGBM and XGBoost
